@@ -68,22 +68,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        if(i==4){
-            return;
+        try{
+
+            if (((Button) v).getText().toString().equals(QUIZ_ANSWER[i]+"")){
+                tv7.setText(a+"");
+                a++;
+                i++;
+                changeQuestion();
+
+            } else {
+                tv8.setText(b+"");
+                b++;
+                i++;
+                changeQuestion();
+
+            }
+
+    }catch (Exception e){
+
         }
-        if (((Button) v).getText().toString().equals(QUIZ_ANSWER[i]+"")){
-            tv7.setText(a+"");
-            a++;
-            i++;
-            changeQuestion();
-
-        } else {
-            tv8.setText(b+"");
-            b++;
-            i++;
-            changeQuestion();
-
-        }
-
-    }
-}
+}}
